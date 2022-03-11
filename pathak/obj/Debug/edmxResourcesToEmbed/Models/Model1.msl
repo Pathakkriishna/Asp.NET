@@ -4,6 +4,7 @@
     <EntitySetMapping Name="employees">
       <EntityTypeMapping TypeName="PathakModel.employee">
         <MappingFragment StoreEntitySet="employee">
+          <ScalarProperty Name="contact" ColumnName="contact" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="address" ColumnName="address" />

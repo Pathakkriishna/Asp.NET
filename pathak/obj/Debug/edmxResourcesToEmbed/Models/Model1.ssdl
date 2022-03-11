@@ -7,6 +7,7 @@
     <Property Name="id" Type="int" Nullable="false" />
     <Property Name="name" Type="varchar" MaxLength="20" />
     <Property Name="address" Type="varchar" MaxLength="20" />
+    <Property Name="contact" Type="varchar" MaxLength="20" />
   </EntityType>
   <EntityContainer Name="PathakModelStoreContainer">
     <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
