@@ -26,5 +26,6 @@ namespace pathak.Models
         }
     
         public virtual DbSet<employee> employees { get; set; }
+        public virtual DbSet<student> students { get; set; }
     }
 }
