@@ -1,0 +1,24 @@
+﻿@model pathak.Models.employee
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm("UpdateData", "Pathak"))
+{
+    <input type="hidden" name="id" class="form-control" value="@(Model.id)" />
+    <label class="col-md-2">Name</label>
+    <div class="col-md-4">
+        <input type="text" name="name" class="form-control" value="@(Model.name)" />
+    </div><br>
+    <label class="col-md-2">Address</label>
+    <div class="col-md-4">
+        <input type="text" name="address" class="form-control" value="@(Model.address)" />
+    </div><br>
+    <label class="col-md-2">Contact</label>
+    <div class="col-md-4">
+        <input type="text" name="contact" class="form-control"  value="@(Model.contact)" />
+    </div><br>
+    <input type="submit" name="Submit" class="submitButton"/>
+}
+

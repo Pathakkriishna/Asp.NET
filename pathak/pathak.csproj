@@ -212,6 +212,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Pathak\FormWork.cshtml" />
     <Content Include="Views\Pathak\Create.cshtml" />
+    <Content Include="Views\Pathak\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

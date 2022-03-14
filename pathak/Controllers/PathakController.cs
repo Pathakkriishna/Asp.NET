@@ -27,6 +27,22 @@ namespace pathak.Controllers
             db.SaveChanges();
             return RedirectToAction("FormWork");
         }
+        public ActionResult Edit(int id)
+        {
+            employee data = db.employees.Find(id);//find data using primary key
+            //employee data = db.employee.FirstorDefault(x =)
+            return View(data);
+        }
+        public ActionResult UpdateData(employee employee)
+        {
+            employee update = db.employees.Find(employee.id);
+            update.name = employee.name;
+            update.address= employee.address;
+            db.Entry(update).State= System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("FormWork");
+
+        }
 
     }
 }
