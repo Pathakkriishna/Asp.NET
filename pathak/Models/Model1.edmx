@@ -19,7 +19,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="20" />
+          <Property Name="sname" Type="varchar" MaxLength="20" />
+          <Property Name="saddress" Type="varchar" MaxLength="20" />
+          <Property Name="scontact" Type="varchar" MaxLength="40" />
         </EntityType>
         <EntityContainer Name="PathakModelStoreContainer">
           <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
@@ -47,7 +49,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="saddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="scontact" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -68,7 +72,9 @@
           <EntitySetMapping Name="students">
             <EntityTypeMapping TypeName="PathakModel.student">
               <MappingFragment StoreEntitySet="student">
-                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="scontact" ColumnName="scontact" />
+                <ScalarProperty Name="saddress" ColumnName="saddress" />
+                <ScalarProperty Name="sname" ColumnName="sname" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

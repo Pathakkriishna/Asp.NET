@@ -14,7 +14,9 @@
     <EntitySetMapping Name="students">
       <EntityTypeMapping TypeName="PathakModel.student">
         <MappingFragment StoreEntitySet="student">
-          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="scontact" ColumnName="scontact" />
+          <ScalarProperty Name="saddress" ColumnName="saddress" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

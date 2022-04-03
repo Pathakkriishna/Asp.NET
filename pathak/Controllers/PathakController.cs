@@ -38,6 +38,7 @@ namespace pathak.Controllers
             employee update = db.employees.Find(employee.id);
             update.name = employee.name;
             update.address= employee.address;
+            update.contact = employee.contact;
             db.Entry(update).State= System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("FormWork");

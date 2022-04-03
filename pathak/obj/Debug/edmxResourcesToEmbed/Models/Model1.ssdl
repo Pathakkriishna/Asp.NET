@@ -14,7 +14,9 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="name" Type="varchar" MaxLength="20" />
+    <Property Name="sname" Type="varchar" MaxLength="20" />
+    <Property Name="saddress" Type="varchar" MaxLength="20" />
+    <Property Name="scontact" Type="varchar" MaxLength="40" />
   </EntityType>
   <EntityContainer Name="PathakModelStoreContainer">
     <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />

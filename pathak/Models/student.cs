@@ -15,6 +15,8 @@ namespace pathak.Models
     public partial class student
     {
         public int id { get; set; }
-        public string name { get; set; }
+        public string sname { get; set; }
+        public string saddress { get; set; }
+        public string scontact { get; set; }
     }
 }
