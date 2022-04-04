@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "esdcreate";
+}
+
+<h2>esdcreate</h2>
+@using (Html.BeginForm("esdcreate", null, FormMethod.Post))
+{
+<h3>Employee_Salary_Details</h3>
+<label class="col-md-2">Name</label>
+<div class="col-md-4">
+    <input type="text" name="empname" class="form-control" />
+</div>
+<br>
+<label class="col-md-2">Salary Paid</label>
+<div class="col-md-4">
+    <input type="text" name="salarypaid" class="form-control" />
+</div>
+<br>
+<label class="col-md-2">Paid Dates</label>
+<div class="col-md-4">
+    <input type="date" name="paiddate" class="form-control" />
+</div>
+<br>
+<input type="submit" name="Submit" class="submitButton" />
+}

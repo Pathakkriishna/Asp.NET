@@ -9,6 +9,15 @@
     <Property Name="address" Type="varchar" MaxLength="20" />
     <Property Name="contact" Type="varchar" MaxLength="20" />
   </EntityType>
+  <EntityType Name="employee_salary_details">
+    <Key>
+      <PropertyRef Name="esd_id" />
+    </Key>
+    <Property Name="esd_id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" />
+    <Property Name="salary_paid" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="paid_date" Type="datetime" />
+  </EntityType>
   <EntityType Name="student">
     <Key>
       <PropertyRef Name="id" />
@@ -18,8 +27,25 @@
     <Property Name="saddress" Type="varchar" MaxLength="20" />
     <Property Name="scontact" Type="varchar" MaxLength="40" />
   </EntityType>
+  <Association Name="FK__employee_sal__id__71D1E811">
+    <End Role="employee" Type="Self.employee" Multiplicity="0..1" />
+    <End Role="employee_salary_details" Type="Self.employee_salary_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employee">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="employee_salary_details">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="PathakModelStoreContainer">
     <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="employee_salary_details" EntityType="Self.employee_salary_details" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__employee_sal__id__71D1E811" Association="Self.FK__employee_sal__id__71D1E811">
+      <End Role="employee" EntitySet="employee" />
+      <End Role="employee_salary_details" EntitySet="employee_salary_details" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

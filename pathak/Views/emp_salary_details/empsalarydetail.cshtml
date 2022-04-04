@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "empsalarydetail";
+}
+
+<h2>empsalarydetail</h2>
+<p>
+    @Html.ActionLink("Create New","esdcreate")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Sn</th>
+        <th>Employee Name</th>
+        <th>Salary Amount</th>
+        <th>Paid Dates</th>
+        <th>Action</th>
+    </tr>
+    @{  int sn = 0;}
+    @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@(++sn)</td>
+                    <td></td>
+                    <td>@item.salary_paid</td>
+                    <td>@item.paid_date </td>
+                    <td>
+                        @Html.ActionLink("Edit","Edit", new { esd_id = item.esd_id})|
+                        @Html.ActionLink("Details","Details", new { esd_id = item.esd_id})|
+                        @Html.ActionLink("Delete","delete", new { esd_id = item.esd_id})
+                    </td>
+                </tr>
+            }
+</table>
+

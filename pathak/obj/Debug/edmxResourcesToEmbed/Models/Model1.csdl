@@ -3,6 +3,11 @@
   <EntityContainer Name="PathakEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="employees" EntityType="PathakModel.employee" />
     <EntitySet Name="students" EntityType="PathakModel.student" />
+    <EntitySet Name="employee_salary_details" EntityType="PathakModel.employee_salary_details" />
+    <AssociationSet Name="FK__employee_sal__id__71D1E811" Association="PathakModel.FK__employee_sal__id__71D1E811">
+      <End Role="employee" EntitySet="employees" />
+      <End Role="employee_salary_details" EntitySet="employee_salary_details" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="employee">
     <Key>
@@ -12,6 +17,7 @@
     <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="contact" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="employee_salary_details" Relationship="PathakModel.FK__employee_sal__id__71D1E811" FromRole="employee" ToRole="employee_salary_details" />
   </EntityType>
   <EntityType Name="student">
     <Key>
@@ -22,4 +28,26 @@
     <Property Name="saddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="scontact" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
   </EntityType>
+  <EntityType Name="employee_salary_details">
+    <Key>
+      <PropertyRef Name="esd_id" />
+    </Key>
+    <Property Name="esd_id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" />
+    <Property Name="salary_paid" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="paid_date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="employee" Relationship="PathakModel.FK__employee_sal__id__71D1E811" FromRole="employee_salary_details" ToRole="employee" />
+  </EntityType>
+  <Association Name="FK__employee_sal__id__71D1E811">
+    <End Type="PathakModel.employee" Role="employee" Multiplicity="0..1" />
+    <End Type="PathakModel.employee_salary_details" Role="employee_salary_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employee">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="employee_salary_details">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
