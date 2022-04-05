@@ -18,6 +18,8 @@ namespace pathak.Controllers
         }
         public ActionResult esdcreate()
         {
+            var emplist = db.employees.ToList();
+            ViewBag.employeeList = new SelectList(emplist, "id", "name");
             return View();
         }
         [HttpPost]

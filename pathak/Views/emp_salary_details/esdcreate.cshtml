@@ -2,10 +2,32 @@
 @{
     ViewBag.Title = "esdcreate";
 }
+<style type="text/css">
+    .submitButton {
+        background: transparent;
+        color: black;
+        border: 1px solid red;
+        border-radius: 10px;
+    }
+    .submitButton:hover{
+        Background:black;
+        border:1px solid red;
+        color: white;
+    }
+</style>
 
 <h2>esdcreate</h2>
 @using (Html.BeginForm("esdcreate", null, FormMethod.Post))
 {
+    <div class="form-horizontal">
+    <div class="form-group">
+        <label>Employee Name</label>
+        @Html.DropDownList("employeeList", null,"Select", htmlAttributes: new {@Name = "id",@class="form_control"})
+    </div>
+        <div class="form-group">
+            <label>Salary Paid</label>
+            <input type="text" class="form-control" name="salary_paid"/>
+        
 <h3>Employee_Salary_Details</h3>
 <label class="col-md-2">Name</label>
 <div class="col-md-4">
@@ -23,4 +45,6 @@
 </div>
 <br>
 <input type="submit" name="Submit" class="submitButton" />
+        </div>
+    </div>
 }
